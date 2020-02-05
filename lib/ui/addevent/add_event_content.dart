@@ -36,16 +36,25 @@ class AddEventContent extends State<AddEventContentForm> {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: <Widget>[
-            TextField(
-                controller: mTitle,
-                decoration: InputDecoration(
-                    labelText: 'Title'
-                )
-            ),
+          SizedBox(
+              child: TextField(
+              controller: mTitle,
+              decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.greenAccent, width: 1.0),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.red, width: 1.0),
+                  ),
+                  labelText: 'Title'
+              )
+
+          ))
+           ,
             TextField(
                 controller: mDesciription,
                 decoration: InputDecoration(
-                    labelText: 'Description'
+                    labelText: 'Description',
                 ),
             ),
             TextField(
