@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:localeventsapp/model/category.dart';
 import 'package:localeventsapp/model/event.dart';
 import 'package:localeventsapp/styleguide.dart';
+import 'package:localeventsapp/ui/addevent/add_event_page.dart';
 import 'package:localeventsapp/ui/event_details/event_details_page.dart';
 import 'package:provider/provider.dart';
 
@@ -38,7 +39,13 @@ class HomePage extends StatelessWidget {
                           new IconButton(
                             icon: new Icon(Icons.add_circle_outline),
                             color: Color(0x99FFFFFF),
-                            onPressed: (){_onSearchButtonPressed();},
+                            onPressed: (){
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                  builder: (context) => AddEventPage(),
+                                ),
+                              );
+                              },
                           ),
                           Icon(
                             Icons.person_outline,
@@ -99,6 +106,6 @@ class HomePage extends StatelessWidget {
   }
 
   void _onSearchButtonPressed() {
-    print("add button clicked");
+
   }
 }
